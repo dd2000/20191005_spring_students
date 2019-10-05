@@ -1,0 +1,6 @@
+Zaimplementuj metody umożliwiające:
+- /grade/list                                        - listowanie
+- /grade/add (GET MAPPING - wyświetl formularz)      - wyświetl formularz dodawania
+- /grade/add  (POST MAPPING - prześlij formularz)    - zatwierdź i zapisz rekord
+- /grade/edit/{id}                                   - wyswietl formularz edycji
+- /grade/delete/{id}                                 - usun rekord

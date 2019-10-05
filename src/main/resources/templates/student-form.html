@@ -5,15 +5,18 @@
     <title>Student form</title>
 </head>
 <body>
+<div th:replace="templates :: navigator"></div>
 <h1>Student form</h1>
 
-<form th:action="@{/add}" method="post" th:object="${student_do_uzupelnienia}">
+<form th:action="@{/student/add}" method="post" th:object="${student_do_uzupelnienia}">
     <input type="hidden" th:field="*{id}"> <!-- pole ukryte przed użytkownikiem -->
     <br />Name: <input type="text" th:field="*{name}"> <!-- ${student_do_uzupelnienia.name} -->
     <!-- użycie gwiazdki to to samo, co: ${student_do_uzupełnienia.name},
         tylko mamy skrócony zapis -->
     <br />Surname: <input type="text" th:field="*{surname}">
-    <br />Age: <input type="number" th:field="*{age}">
+    <br />Is Alive: <input type="checkbox" th:field="*{alive}">
+
+    <!-- <br />Age: <input type="number" th:field="*{age}">         --- tak było bez Alive  -->
     <br />Date of birth: <input type="date" th:field="*{dateOfBirth}">
 
     <br /><br /><input type="submit" value="Wyślij:/Dodaj!/Edytuj!/Usuń!">

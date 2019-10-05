@@ -14,7 +14,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+
 @Controller
+@RequestMapping("/student/")   // teraz wszystkie metody adresowane są na: /student/add lub /student/list itd
+            // jakby /student był lokalizacją bazową
 public class StudentController {
     @Autowired
     private StudentService studentService;
@@ -23,7 +26,7 @@ public class StudentController {
     public String usunStudenta(@PathVariable(name = "student_to_remove") Long id){
         studentService.deleteById(id);
 
-        return "redirect:/list";
+        return "redirect:/student/list";
     }
 
     @GetMapping("/edit/{edited_student_id}")
@@ -36,7 +39,7 @@ public class StudentController {
             model.addAttribute("student_do_uzupelnienia", student);  // umieszczamy jako argument (do edycji)
             return "student-form";  // ładujemy formularz
         } else {
-            return "redirect:/list";  // jeśli nie uda się go odnaleźć, wróć do listy
+            return "redirect:/student/list";  // jeśli nie uda się go odnaleźć, wróć do listy
         }
     }
 
@@ -50,7 +53,7 @@ public class StudentController {
     public String zapisz(Student student){
         studentService.save(student);
 
-        return "redirect:/list";
+        return "redirect:/student/list";
     }
 
 
