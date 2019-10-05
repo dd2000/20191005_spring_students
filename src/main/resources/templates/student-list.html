@@ -13,6 +13,7 @@
         <th>Surname</th>
         <th>Date of birth</th>
         <th>Age</th>
+        <th>Wybierz operację:</th> <!-- kolumna na guziki -->
     </tr>
     <tr th:each="student : ${nasza_lista_studentow}">
         <td th:text="${student.getId()}"></td>
@@ -20,6 +21,10 @@
         <td th:text="${student.getSurname()}"></td>
         <td th:text="${student.getDateOfBirth()}"></td>
         <td th:text="${student.getAge()}"></td>
+        <td >
+            <a th:href="@{'/edit/' + ${student.getId()}}">Edytuj</a>
+            <a th:href="@{'/delete/' + ${student.getId()}}">Usuń</a>
+        </td>
     </tr>
 </table>
 

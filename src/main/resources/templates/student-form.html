@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student form</title>
+</head>
+<body>
+<h1>Student form</h1>
+
+<form th:action="@{/add}" method="post" th:object="${student_do_uzupelnienia}">
+    <input type="hidden" th:field="*{id}"> <!-- pole ukryte przed użytkownikiem -->
+    <br />Name: <input type="text" th:field="*{name}"> <!-- ${student_do_uzupelnienia.name} -->
+    <!-- użycie gwiazdki to to samo, co: ${student_do_uzupełnienia.name},
+        tylko mamy skrócony zapis -->
+    <br />Surname: <input type="text" th:field="*{surname}">
+    <br />Age: <input type="number" th:field="*{age}">
+    <br />Date of birth: <input type="date" th:field="*{dateOfBirth}">
+
+    <br /><br /><input type="submit" value="Wyślij:/Dodaj!/Edytuj!/Usuń!">
+
+</form>
+
+</body>
+</html>
