@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Grade list</title>
+</head>
+<body>
+<div th:replace="templates :: navigator"></div>
+<h1>Student list</h1>
+<table cellpadding="0" border="0" cellpadding="0">
+    <tr>
+        <th>Id</th>
+        <th>Subject</th>
+        <th>Value</th>
+        <th>Date added</th>
+        <th>Przyciski:</th> <!-- kolumna na guziki -->
+    </tr>
+    <tr th:each="grade : ${grades}">
+        <td th:text="${grade.getId()}"></td>
+        <td th:text="${grade.getSubject()}"></td>
+        <td th:text="${grade.getValue()}"></td>
+        <td th:text="${grade.getDateAdded()}"></td>
+        <td >
+            <a th:href="@{'/grade/edit/' + ${grade.getId()}}">Edytuj</a>
+            <a th:href="@{'/grade/delete/' + ${grade.getId()}}">Usuń</a>
+        </td>
+    </tr>
+</table>
+
+</body>
+</html>

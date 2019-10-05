@@ -13,9 +13,9 @@ public class GradeController {
     @Autowired
     private GradeService gradeService;
 
-    @GetMapping("/list")
+    @GetMapping("/grade/list")
     public String listGrades(Model model){
-        model.addAttribute("grades",gradeService.getAll());
+        model.addAttribute("grades", gradeService.getAll());
 
         return "grade-list";
     }
