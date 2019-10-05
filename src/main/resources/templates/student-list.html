@@ -16,6 +16,10 @@
     </tr>
     <tr th:each="student : ${nasza_lista_studentow}">
         <td th:text="${student.getId()}"></td>
+        <td th:text="${student.getName()}"></td>
+        <td th:text="${student.getSurname()}"></td>
+        <td th:text="${student.getDateOfBirth()}"></td>
+        <td th:text="${student.getAge()}"></td>
     </tr>
 </table>
 
