@@ -9,4 +9,7 @@ public class GradeService {
     @Autowired
     private GradeRepository gradeRepository;
 
+    public Object getAll() {
+        return null;
+    }
 }
